@@ -5,12 +5,12 @@ import './App.css';
 function App() {
   const [showParagraph, setShowParagraph] = useState(false) 
 
-  const toggleParagraphHandler = () => {
+  const toggleParagraphHandler = ()  => {
     setShowParagraph((prevShowParagrapgh) => !prevShowParagrapgh);
   }
 
   return (
-    <div className="app">
+    <div className="app" >
       <h1>Hi there!</h1>
       {showParagraph && <p>This is new!</p>}
       <Button onClick={toggleParagraphHandler}>Show Paragrapgh</Button>
