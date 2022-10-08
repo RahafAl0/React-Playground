@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from './components/UI/Button/Button'
-import DemoOutput from './components/UI/Button/Demo/DemoOutput';
+import DemoOutput from './components/Demo/DemoOutput';
 import './App.css';
 
 function App() {
