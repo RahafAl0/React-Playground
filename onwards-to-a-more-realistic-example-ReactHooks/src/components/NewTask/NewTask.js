@@ -12,7 +12,7 @@ const NewTask = (props) => {
     setError(null);
     try {
       const response = await fetch(
-        'https://react-http-472a6-default-rtdb.asia-southeast1.firebasedatabase.app/tasks.json',
+        "https://react-http-472a6-default-rtdb.asia-southeast1.firebasedatabase.app/tasks.json",
         {
           method: 'POST',
           body: JSON.stringify({ text: taskText }),
