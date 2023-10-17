@@ -1,21 +1,26 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { lazy, useContext, useState } from "react";
 import AdoptedPetContext from "./ AdoptedPetContext";
+import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
 import fetchPet from "./fetchPet";
-import Carousel from "./Carousel";
+import { PetAPIResponse } from "./APIResponsesTypes";
 
 const Modal = lazy(() => import("./Modal"));
 
 const Details = () => {
   const { id } = useParams();
+
+  if (!id) {
+    throw new Error("no id provided to details");
+  }
+
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
-  const results = useQuery(["details", id], fetchPet);
-  // eslint-disable-next-line no-unused-vars
+  const results = useQuery<PetAPIResponse>(["details", id], fetchPet);  
   const [_, setAdoptedPet] = useContext(AdoptedPetContext);
-
   if (results.isLoading) {
     return (
       <div className="loading-pane">
@@ -24,7 +29,10 @@ const Details = () => {
     );
   }
 
-  const pet = results.data.pets[0];
+  const pet = results?.data?.pets[0];
+  if (!pet) {
+    throw new Error("no pet found");
+  }
 
   return (
     <div className="details">
@@ -57,10 +65,10 @@ const Details = () => {
   );
 };
 
-export default function DetailsErrorBoundary(props) {
+export default function DetailsErrorBoundary() {
   return (
     <ErrorBoundary>
-      <Details {...props} />
+      <Details />
     </ErrorBoundary>
   );
 }
