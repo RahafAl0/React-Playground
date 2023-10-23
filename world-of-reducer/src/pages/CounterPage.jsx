@@ -13,8 +13,16 @@ function CounterPage({ initialCount }) {
   };
 
   const handleChange = (event) => {
-    const value = parseInt(event.value.target);
+    const value = parseInt(event.target.value) || 0;
+
+    setValueToAdd(value)
   };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    setCount(count + valueToAdd);
+    setValueToAdd(0);
+  }
 
   return (
     <div>
@@ -34,10 +42,10 @@ function CounterPage({ initialCount }) {
         </button>
       </div>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Add a lot</label>
         <input
-          value={valueToAdd}
+          value={valueToAdd || ''}
           onChange={handleChange}
           type="number"
           className="p-1 m-3 bg-gray-50 border border-gray-300"
