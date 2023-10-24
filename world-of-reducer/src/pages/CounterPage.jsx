@@ -3,6 +3,8 @@ import { useReducer } from 'react';
 
 const INCREMENT_COUNT = 'incerement';
 const SET_VALUE_TO_ADD = 'change_vlaue_to_add';
+const DECREMENT_COUNT = 'decrement'
+const ADD_VALUE_TO_COUNT = 'value_to_count'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -11,11 +13,22 @@ const reducer = (state, action) => {
         ...state,
         count: state.count + 1,
       };
+      case DECREMENT_COUNT :
+      return {
+        ...state,
+        count: state.count - 1,
+      };
     case SET_VALUE_TO_ADD :
       return {
         ...state,
         valueToAdd: action.payload,
       };
+    case ADD_VALUE_TO_COUNT :
+      return {
+        ...state,
+        count: state.count + state.valueToAdd,
+        valurToAdd: 0
+      }
     default:
       return state;
   }
@@ -52,7 +65,9 @@ function CounterPage({ initialCount }) {
     });
   };
   const decrement = () => {
-    // setCount(count - 1);
+    dispatch({
+      type: DECREMENT_COUNT
+    })
   };
   const handleChange = (event) => {
     const value = parseInt(event.target.value) || 0;
@@ -64,9 +79,9 @@ function CounterPage({ initialCount }) {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    // setCount(count + valueToAdd);
-    // setValueToAdd(0);
+    dispatch({
+      type: ADD_VALUE_TO_COUNT
+    })
   };
   return (
     <div>
@@ -94,7 +109,7 @@ function CounterPage({ initialCount }) {
           type="number"
           className="p-1 m-3 bg-gray-50 border border-gray-300"
         />
-        <button>Add it</button>
+        <button className="bg-indigo-500 flex items-center px-3 py-1.5 border rounded-full">Add it</button>
       </form>
     </div>
   );
