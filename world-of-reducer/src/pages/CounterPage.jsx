@@ -1,22 +1,40 @@
 import { useReducer } from 'react';
 
 
+const INCREMENT_COUNT = 'incerement';
+const SET_VALUE_TO_ADD = 'change_vlaue_to_add';
+
 const reducer = (state, action) => {
-  if (action.type === 'increment') {
-    return {
-      ...state,
-      count: state.count + 1,
-    };
+  switch (action.type) {
+    case INCREMENT_COUNT :
+      return {
+        ...state,
+        count: state.count + 1,
+      };
+    case SET_VALUE_TO_ADD :
+      return {
+        ...state,
+        valueToAdd: action.payload,
+      };
+    default:
+      return state;
   }
 
-  if (action.type === 'change-value-to-add') {
-    return {
-      ...state,
-      valueToAdd: action.payload,
-    };
-  }
+  // if (action.type === INCREMENT_COUNT) {
+    // return {
+    //   ...state,
+    //   count: state.count + 1,
+    // };
+  // }
 
-  return state;
+  // if (action.type === SET_VALUE_TO_ADD) {
+    // return {
+    //   ...state,
+    //   valueToAdd: action.payload,
+    // };
+  // }
+
+  // return state;
 };
 
 function CounterPage({ initialCount }) {
@@ -30,7 +48,7 @@ function CounterPage({ initialCount }) {
 
   const increment = () => {
     dispatch({
-      type: 'increment',
+      type: INCREMENT_COUNT,
     });
   };
   const decrement = () => {
@@ -40,7 +58,7 @@ function CounterPage({ initialCount }) {
     const value = parseInt(event.target.value) || 0;
 
     dispatch({
-      type: 'change-value-to-add',
+      type: SET_VALUE_TO_ADD,
       payload: value,
     });
   };
