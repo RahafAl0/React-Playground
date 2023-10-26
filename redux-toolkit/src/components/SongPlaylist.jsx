@@ -35,7 +35,7 @@ function SongPlaylist() {
         <div className="buttons">
           <button
             onClick={() => handleSongAdd(createRandomSong())}
-            className="bg-purple-50"
+            className="button is-link"
           >
             + Add Song to Playlist
           </button>
