@@ -21,3 +21,4 @@ const store = configureStore({
 
 
 export { store, songSlice}
+export const { addSong } = songSlice.actions;
