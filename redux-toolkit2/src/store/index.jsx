@@ -1,15 +1,17 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { formReducer, changeName, changeCost } from "./slices/formSlice";
+import { configureStore } from '@reduxjs/toolkit';
 import {
   carsReducer,
-  changeSearchTerm,
-  removeCar,
   addCar,
-} from "./slices/carsSlice";
+  removeCar,
+  changeSearchTerm,
+} from './slices/carsSlice';
+import { formReducer, changeName, changeCost } from './slices/formSlice';
 
 const store = configureStore({
-  reducer: carsReducer,
-  form: formReducer
+  reducer: {
+    cars: carsReducer,
+    form: formReducer,
+  },
 });
 
-export { store, changeName, changeCost, addCar, removeCar, changeSearchTerm }
+export { store, changeName, changeCost, addCar, removeCar, changeSearchTerm };
