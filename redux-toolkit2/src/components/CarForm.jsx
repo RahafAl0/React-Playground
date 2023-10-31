@@ -32,7 +32,8 @@ function CarForm() {
         <div className="field-group">
           <div className="field">
             <label className="label">Name</label>
-            <input
+            <input 
+              required
               className="input is-expanded"
               value={name}
               onChange={handleNameChange}
@@ -42,6 +43,7 @@ function CarForm() {
           <div className="field">
             <label className="label">Cost</label>
             <input
+              required
               className="input is-expanded"
               value={cost || ''}
               onChange={handleCostChange}
