@@ -1,7 +1,14 @@
 {
-  "users": [{ "id": 1, "name": "Rahaf" }],
+  "users": [
+    {
+      "id": 1,
+      "name": "Rahaf"
+    },
+    {
+      "name": "Ms. Juana Gusikowski",
+      "id": 2
+    }
+  ],
   "photos": [],
   "albums": []
 }
-
- 
