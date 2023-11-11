@@ -5,34 +5,20 @@
       "name": "Rahaf"
     },
     {
-      "name": "Sidney Crona",
+      "name": "Elsie Price",
       "id": 3
     },
     {
-      "name": "Dexter Kris",
-      "id": 5
-    },
-    {
-      "name": "Lois Runolfsson",
-      "id": 6
-    },
-    {
-      "name": "Dr. Darin Mayer",
-      "id": 7
-    },
-    {
-      "name": "Beverly Smith",
-      "id": 9
-    },
-    {
-      "name": "Jessie Reilly",
-      "id": 12
-    },
-    {
-      "name": "Keith Friesen",
-      "id": 13
+      "name": "Harold Strosin",
+      "id": 4
     }
   ],
-  "photos": [],
-  "albums": []
+  "albums": [
+    {
+      "id": 10,
+      "title": "Hiking Trip",
+      "userId": 1
+    }
+  ],
+  "photos": []
 }
