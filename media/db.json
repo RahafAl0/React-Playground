@@ -11,6 +11,10 @@
     {
       "name": "Antonia Terry",
       "id": 5
+    },
+    {
+      "name": "Shannon Flatley",
+      "id": 6
     }
   ],
   "albums": [
@@ -33,6 +37,11 @@
       "userId": 5,
       "title": "Ergonomic Steel Cheese",
       "id": 18
+    },
+    {
+      "userId": 3,
+      "title": "Sleek Cotton Hat",
+      "id": 20
     }
   ],
   "photos": []
