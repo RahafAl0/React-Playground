@@ -1,48 +1,43 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Rahaf"
-    },
-    {
       "name": "Elsie Price",
       "id": 3
     },
     {
       "name": "Harold Strosin",
       "id": 4
+    },
+    {
+      "name": "Antonia Terry",
+      "id": 5
     }
   ],
   "albums": [
-    {
-      "id": 10,
-      "title": "Hiking Trip",
-      "userId": 1
-    },
-    {
-      "userId": 1,
-      "title": "Luxurious Metal Keyboard",
-      "id": 11
-    },
-    {
-      "userId": 1,
-      "title": "Fantastic Plastic Chips",
-      "id": 12
-    },
-    {
-      "userId": 1,
-      "title": "Handmade Granite Chips",
-      "id": 13
-    },
     {
       "userId": 3,
       "title": "Recycled Steel Sausages",
       "id": 14
     },
     {
-      "userId": 1,
-      "title": "Unbranded Plastic Keyboard",
+      "userId": 4,
+      "title": "Handcrafted Soft Shirt",
       "id": 15
+    },
+    {
+      "userId": 4,
+      "title": "Incredible Rubber Tuna",
+      "id": 16
+    },
+    {
+      "userId": 5,
+      "title": "Fantastic Concrete Pants",
+      "id": 17
+    },
+    {
+      "userId": 5,
+      "title": "Ergonomic Steel Cheese",
+      "id": 18
     }
   ],
   "photos": []
