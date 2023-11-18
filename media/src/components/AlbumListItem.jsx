@@ -1,15 +1,26 @@
 import { FiTrash } from "react-icons/fi";
-import Button from "./Button";
-import ExpandablePanel from "./ExbandablePanel";
+import { useRemoveAlbumMutation } from '../store';
+import Button from './Button';
+import ExpandablePanel from './ExpandablePanel';
 
-function AlbumListItem({ album }) {
+function AlbumsListItem({ album }) {
+  const [removeAlbum, results] = useRemoveAlbumMutation();
+
+  const handleRemoveAlbum = () => {
+    removeAlbum(album);
+  };
+
   const header = (
-    <div>
-      <Button>
+    <>
+      <Button
+        className="mr-2"
+        loading={results.isLoading}
+        onClick={handleRemoveAlbum}
+      >
         <FiTrash />
       </Button>
       {album.title}
-    </div>
+    </>
   );
 
   return (
@@ -19,4 +30,4 @@ function AlbumListItem({ album }) {
   );
 }
 
-export default AlbumListItem;
+export default AlbumsListItem;

@@ -2,7 +2,7 @@ import { FiTrash } from "react-icons/fi";
 import Button from "./Button";
 import { removeUser } from "../store/thunks/removeUser";
 import { useThunk } from "../hooks/use-thunk";
-import ExpandablePanel from "./ExbandablePanel";
+import ExpandablePanel from "./ExpandablePanel";
 import AlbumList from "./AlbumList";
 
 function UsersListItem({ user }) {
