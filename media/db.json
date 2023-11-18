@@ -28,6 +28,16 @@
       "userId": 1,
       "title": "Fantastic Plastic Chips",
       "id": 12
+    },
+    {
+      "userId": 1,
+      "title": "Handmade Granite Chips",
+      "id": 13
+    },
+    {
+      "userId": 3,
+      "title": "Recycled Steel Sausages",
+      "id": 14
     }
   ],
   "photos": []
