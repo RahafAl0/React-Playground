@@ -42,7 +42,23 @@
       "userId": 3,
       "title": "Sleek Cotton Hat",
       "id": 20
+    },
+    {
+      "userId": 3,
+      "title": "Unbranded Wooden Cheese",
+      "id": 21
     }
   ],
-  "photos": []
+  "photos": [
+    {
+      "albumId": 20,
+      "url": "https://loremflickr.com/150/150/abstract?lock=6684107010473984",
+      "id": 1
+    },
+    {
+      "albumId": 20,
+      "url": "https://loremflickr.com/150/150/abstract?lock=5285754739621888",
+      "id": 2
+    }
+  ]
 }
